@@ -30,7 +30,7 @@ pip install pillow numpy scikit-learn matplotlib
 3. Execute:
 
 ```bash
-python main.py
+python color.py
 ```
 
 O programa mostra a paleta extraída e os gráficos de distribuição.
