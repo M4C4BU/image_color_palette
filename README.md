@@ -1,21 +1,42 @@
-# Extrator de Paletas de Cores
+# Gerador de Paleta de Cores (Python)
 
-Projeto desenvolvido em Python para extrair paletas de cores predominantes a partir de imagens, utilizando processamento de pixels e técnicas de aprendizado de máquina.
+Um programa em **Python** que recebe uma imagem e extrai as suas cores dominantes usando **K-Means**, um algoritmo de clustering. Além da paleta, ele mostra como os pixels se agrupam por meio de gráficos.
+
+> Primeiro projeto de uma série em que exploro o lado menos óbvio de cada linguagem: **Python** (este aqui), **Julia** (sistema solar 3D com GLMakie) e **R** (flow field com ggplot2).
 
 ## Como funciona
 
-O programa analisa os pixels da imagem, representando cada um por seus valores RGB (vermelho, verde e azul). Em seguida, utiliza o algoritmo **K-Means** para agrupar pixels com cores semelhantes.
+1. A imagem é redimensionada e convertida numa matriz de pixels (**Pillow** + **NumPy**).
+2. Cada pixel é tratado como um ponto no espaço RGB, e os pontos são agrupados com **K-Means** (**Scikit-learn**).
+3. O centro de cada cluster vira uma das cores dominantes da imagem.
+4. Tudo é visualizado com **Matplotlib**:
+   - distribuição 3D dos pixels no espaço de cor;
+   - contagem de pixels por cluster;
+   - proporção percentual de cada cor.
 
-O K-Means divide os dados em *K grupos (clusters)*, buscando aproximar os pontos de cada grupo de um centroide. Nesse projeto, cada centroide representa uma cor predominante da imagem, permitindo gerar uma paleta com as principais tonalidades encontradas.
+## Requisitos
 
-## Tecnologias utilizadas
+- Python 3.9 ou superior
+- Bibliotecas:
 
-- **Python:** desenvolvimento do projeto.
-- **NumPy:** manipulação dos dados numéricos dos pixels.
-- **Pillow:** carregamento e processamento das imagens.
-- **Matplotlib:** visualização das paletas de cores geradas.
-- **Scikit-learn:** aplicação do algoritmo K-Means.
+```bash
+pip install pillow numpy scikit-learn matplotlib
+```
 
-## Objetivo
+## Como rodar
 
-Explorar aplicações de aprendizado de máquina não supervisionado e processamento de imagens, transformando informações visuais em dados que podem ser analisados e visualizados.
+1. Coloque a imagem que você quer analisar na pasta do projeto.
+2. Ajuste, no script, o nome do arquivo da imagem.
+3. Execute:
+
+```bash
+python main.py
+```
+
+O programa mostra a paleta extraída e os gráficos de distribuição.
+
+## O que dá pra mexer
+
+- **Número de clusters:** define quantas cores dominantes você quer extrair. Poucos clusters resumem a imagem, muitos capturam nuances.
+- **Tamanho da imagem redimensionada:** imagens menores rodam mais rápido, com pequena perda de precisão nas cores.
+- **A imagem de entrada:** fotos, ilustrações e capturas de tela dão paletas bem diferentes.
