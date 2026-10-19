@@ -23,18 +23,6 @@ Um programa em **Python** que recebe uma imagem e extrai as suas cores dominante
 pip install pillow numpy scikit-learn matplotlib
 ```
 
-## Como rodar
-
-1. Coloque a imagem que você quer analisar na pasta do projeto.
-2. Ajuste, no script, o nome do arquivo da imagem.
-3. Execute:
-
-```bash
-python color.py
-```
-
-O programa mostra a paleta extraída e os gráficos de distribuição.
-
 ## O que dá pra mexer
 
 - **Número de clusters:** define quantas cores dominantes você quer extrair. Poucos clusters resumem a imagem, muitos capturam nuances.
