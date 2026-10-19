@@ -2,7 +2,7 @@
 
 Um programa em **Python** que recebe uma imagem e extrai as suas cores dominantes usando **K-Means**, um algoritmo de clustering. Além da paleta, ele mostra como os pixels se agrupam por meio de gráficos.
 
-> Segundo projeto de uma série em que exploro o lado menos óbvio de cada linguagem: **Python** (este aqui), **Julia** (sistema solar 3D com GLMakie) e **R** (flow field com ggplot2).
+> Segundo projeto de uma série em que exploro o lado menos óbvio de cada linguagem: **Julia** (sistema solar 3D com GLMakie), **Python** (este aqui) e **R** (flow field com ggplot2).
 
 ## Como funciona
 
